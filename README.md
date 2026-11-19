@@ -1,63 +1,70 @@
 # Wrenpatch
 
-Wrenpatch finds the security advisories (CVEs) that actually reach your code and opens the fix as a pull request, with your tests already run.
-
-Most dependency scanners flag every vulnerable package in a lockfile, whether or not your code ever calls the affected function. Wrenpatch traces the call path first, so teams patch what matters and skip the noise.
+A landing page for Wrenpatch, a project I'm working on: a tool idea that finds the security advisories (CVEs) that actually reach your code and opens the fix as a pull request.
 
 ![Wrenpatch landing page](share.jpg)
 
-## Status
+## The idea
 
-Early development. This repository holds the marketing site; the product itself is in progress.
+Dependency scanners usually flag every vulnerable package in a lockfile, even when your code never calls the affected function. Wrenpatch would trace the call path first and only patch what your code reaches:
 
-## How it works
+1. Read the lockfiles and match new advisories (GitHub Advisory Database, OSV) against the installed versions.
+2. Follow the imports to see whether the vulnerable function is ever called.
+3. Open a pull request with the version bump and run the tests on it.
 
-1. **Reads lockfiles.** New advisories from the GitHub Advisory Database and OSV are matched against the exact versions each repository installs.
-2. **Traces the call path.** Imports are followed from your entry points to the vulnerable function. Advisories your code never reaches are listed, not patched.
-3. **Opens a tested pull request.** The version bump goes on its own branch, the test suite runs, and the pull request names the advisory and the call site.
+Right now the repo is just the landing page. The tool itself doesn't exist yet.
 
-Planned integrations: GitHub, GitLab, Slack and Jira, with npm, PyPI, Go and Maven lockfiles.
+## What's on the page
 
-## Running the site locally
+- Hero with a mock app window: a list of advisories next to a `package.json` patch
+- A workflow section that walks through the three steps as you scroll
+- Feature cards (Slack alerts, merge rules)
+- FAQ
+- An integrations diagram (GitHub, GitLab, npm, PyPI, Slack, Jira)
 
-Requires [Node.js](https://nodejs.org/) 18 or newer.
+Plain HTML, CSS and JavaScript, no framework and no build step.
+
+## Run it
+
+Needs [Node.js](https://nodejs.org/) 18+.
 
 ```bash
 npm install
 npm start
 ```
 
-The site is served at http://localhost:3000. It is static HTML, CSS and JavaScript with no build step. Opening `index.html` straight from disk won't work, because browsers block the page's JavaScript modules on `file://`.
+Then open http://localhost:3000.
 
-## Project structure
+Opening `index.html` directly from disk won't work, because browsers block JavaScript modules on `file://`.
+
+## Files
 
 ```
-index.html          landing page
-privacy.html        privacy policy (draft)
-terms.html          terms of service (draft)
-assets/             styles, scripts, UI components, icons and fonts
+index.html          the page
+privacy.html        privacy page (draft)
+terms.html          terms page (draft)
+assets/             styles, scripts, UI pieces, icons, fonts
 assets/fonts/       Sreda, the headline font
 favicon.svg         site icon
-share.jpg           preview image for shared links
+share.jpg           screenshot / link preview
 package.json        npm start script
 ```
 
-## Roadmap for the site
+## To do
 
-- [ ] Connect "Start free" to the sign-up flow (it currently opens an email)
-- [ ] Confirm the response-time figure in the hero
-- [ ] Final privacy policy and terms
-- [ ] Pricing section
-- [ ] Canonical URL and domain
-- [ ] Confirm the license for the Sreda font
+- [ ] Hook "Start free" up to something real (it opens an email for now)
+- [ ] Double-check the "15 minutes" line in the hero
+- [ ] Write proper privacy and terms pages
+- [ ] Maybe a pricing section
+- [ ] Check the Sreda font license before putting this online
 
 ## Credits
 
-- Headline font: **Sreda** by Glenjan (Elena Kowalski). The font file states "Copyright (c) 2011-2012 by Glenjan. All rights reserved."; commercial use is being confirmed with the author.
-- Body and code fonts: Instrument Sans and JetBrains Mono, via Google Fonts.
-- Integration logos: SVG Logos and Simple Icons. Product names and logos are trademarks of their owners.
-- CVE identifiers and fixed versions shown on the site are real, public advisories.
+- Headline font: **Sreda** by Glenjan (Elena Kowalski). The font file says "Copyright (c) 2011-2012 by Glenjan. All rights reserved.", and download sites disagree on whether it's free for commercial use.
+- Body and code fonts: Instrument Sans and JetBrains Mono, from Google Fonts.
+- Integration logos: SVG Logos and Simple Icons. Product names and logos belong to their owners.
+- The CVE numbers and versions in the mock-up are real, public advisories.
 
 ## License
 
-The code in this repository is released under the [MIT License](LICENSE). The Sreda font is not covered by it.
+My code is [MIT](LICENSE). The Sreda font isn't covered by that license.
