@@ -1,59 +1,63 @@
-# Wrenpatch landing page
+# Wrenpatch
 
-A one-page landing site for **Wrenpatch**, a fictional developer tool that tracks security advisories (CVEs) in a team's dependencies, checks whether the vulnerable code is actually called, and opens the fix as a tested pull request.
+Wrenpatch finds the security advisories (CVEs) that actually reach your code and opens the fix as a pull request, with your tests already run.
 
-The design is dark and minimal: a warm near-black background, off-white text, headlines in the Sreda display face, mono type for code, square buttons, thin dividing lines, and white for every button, link and focus outline.
+Most dependency scanners flag every vulnerable package in a lockfile, whether or not your code ever calls the affected function. Wrenpatch traces the call path first, so teams patch what matters and skip the noise.
 
-![Hero of the Wrenpatch landing page](share.jpg)
+![Wrenpatch landing page](share.jpg)
 
-## Sections
+## Status
 
-1. **Hero:** headline, short description, "Start free" and "See the workflow" buttons, and an app window showing a list of advisories beside a `package.json` patch.
-2. **Workflow:** three steps (read lockfiles, trace the call path, open a tested pull request) that hold on screen while you scroll.
-3. **Features:** Slack alerts to the owning team, and per-repository merge rules.
-4. **Questions:** a short FAQ.
-5. **Integrations:** a diagram with GitHub, GitLab, npm, PyPI, Slack and Jira.
-6. **Footer:** a closing call to action and links.
+Early development. This repository holds the marketing site; the product itself is in progress.
 
-## Run it locally
+## How it works
 
-The site is plain HTML, CSS and JavaScript with no build step. It needs [Node.js](https://nodejs.org/) 18 or newer.
+1. **Reads lockfiles.** New advisories from the GitHub Advisory Database and OSV are matched against the exact versions each repository installs.
+2. **Traces the call path.** Imports are followed from your entry points to the vulnerable function. Advisories your code never reaches are listed, not patched.
+3. **Opens a tested pull request.** The version bump goes on its own branch, the test suite runs, and the pull request names the advisory and the call site.
+
+Planned integrations: GitHub, GitLab, Slack and Jira, with npm, PyPI, Go and Maven lockfiles.
+
+## Running the site locally
+
+Requires [Node.js](https://nodejs.org/) 18 or newer.
 
 ```bash
 npm install
 npm start
 ```
 
-`npm start` serves the site with [serve](https://www.npmjs.com/package/serve) on port 3000 and prints the address to open. Opening `index.html` directly from disk will not work, because browsers block the page's JavaScript modules on `file://`.
+The site is served at http://localhost:3000. It is static HTML, CSS and JavaScript with no build step. Opening `index.html` straight from disk won't work, because browsers block the page's JavaScript modules on `file://`.
 
-## Files
+## Project structure
 
-| Path | What it is |
-| --- | --- |
-| `index.html` | The landing page |
-| `package.json` | The `npm start` script and its one dev dependency |
-| `privacy.html`, `terms.html` | Short placeholder legal pages |
-| `assets/` | Design system: styles, scripts, UI fragments, motion, diagrams and icons |
-| `assets/fonts/Sreda.otf` | The headline font |
-| `favicon.svg` | Site icon |
-| `share.jpg` | Preview image for shared links |
-| `names.json` | Record of the search that checked the name "Wrenpatch" was free |
+```
+index.html          landing page
+privacy.html        privacy policy (draft)
+terms.html          terms of service (draft)
+assets/             styles, scripts, UI components, icons and fonts
+assets/fonts/       Sreda, the headline font
+favicon.svg         site icon
+share.jpg           preview image for shared links
+package.json        npm start script
+```
 
-## Before going live
+## Roadmap for the site
 
-- The "Start free" buttons open an email to `hello@wrenpatch.example`. Replace them with the real sign-up link.
-- "Within 15 minutes of disclosure" in the hero is a placeholder claim; confirm or change it.
-- `privacy.html` and `terms.html` are stand-ins.
-- Add the canonical link in `<head>` once the domain is known.
-- There is no pricing section yet.
-- Confirm the Sreda font license (see Fonts and icons).
+- [ ] Connect "Start free" to the sign-up flow (it currently opens an email)
+- [ ] Confirm the response-time figure in the hero
+- [ ] Final privacy policy and terms
+- [ ] Pricing section
+- [ ] Canonical URL and domain
+- [ ] Confirm the license for the Sreda font
 
-The CVE numbers and fixed versions in the app mock-up are real, public advisories.
+## Credits
 
-## Fonts and icons
-
-Headlines use **Sreda** by Glenjan (Elena Kowalski), served from `assets/fonts/Sreda.otf`. Its file says "Copyright (c) 2011-2012 by Glenjan. All rights reserved." and download sites disagree on whether commercial use is free, so confirm the license with Glenjan before going live. Body text (Instrument Sans) and code (JetBrains Mono) load from Google Fonts. Product logos come from SVG Logos and Simple Icons; product names and logos are trademarks of their owners.
+- Headline font: **Sreda** by Glenjan (Elena Kowalski). The font file states "Copyright (c) 2011-2012 by Glenjan. All rights reserved."; commercial use is being confirmed with the author.
+- Body and code fonts: Instrument Sans and JetBrains Mono, via Google Fonts.
+- Integration logos: SVG Logos and Simple Icons. Product names and logos are trademarks of their owners.
+- CVE identifiers and fixed versions shown on the site are real, public advisories.
 
 ## License
 
-[MIT](LICENSE)
+The code in this repository is released under the [MIT License](LICENSE). The Sreda font is not covered by it.
