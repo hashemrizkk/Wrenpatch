@@ -1,6 +1,6 @@
 # Wrenpatch
 
-A landing page for Wrenpatch, a project I'm working on: a tool idea that finds the security advisories (CVEs) that actually reach your code and opens the fix as a pull request.
+Wrenpatch, a project I'm working on: a tool idea that finds the security advisories (CVEs) that actually reach your code and opens the fix as a pull request.
 
 ![Wrenpatch landing page](share.jpg)
 
