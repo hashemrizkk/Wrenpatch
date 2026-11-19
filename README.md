@@ -17,25 +17,21 @@ The visual style follows [duckurity.com](https://duckurity.com/): a warm near-bl
 
 ## Run it locally
 
-The site is plain HTML, CSS and JavaScript with no build step. Serve the folder over HTTP (opening the file directly with `file://` blocks the JavaScript modules):
+The site is plain HTML, CSS and JavaScript with no build step. It needs [Node.js](https://nodejs.org/) 18 or newer.
 
 ```bash
-npx serve .
+npm install
+npm start
 ```
 
-or
-
-```bash
-python -m http.server 8000
-```
-
-Then open http://localhost:8000 (or the address `serve` prints).
+`npm start` serves the site with [serve](https://www.npmjs.com/package/serve) on port 3000 and prints the address to open. Opening `index.html` directly from disk will not work, because browsers block the page's JavaScript modules on `file://`.
 
 ## Files
 
 | Path | What it is |
 | --- | --- |
 | `index.html` | The landing page |
+| `package.json` | The `npm start` script and its one dev dependency |
 | `privacy.html`, `terms.html` | Short placeholder legal pages |
 | `assets/` | Design system: styles, scripts, UI fragments, motion, diagrams and icons |
 | `favicon.svg` | Site icon |
