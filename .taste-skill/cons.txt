@@ -1,0 +1,276 @@
+consistency  C:\Projects\Example\index.html
+
+1440x900  9 screens, 1 held section  1 FAIL  10 WARN
+  FAIL dark-ground     div.wrap > div.hero-text.hero__in > div.hero__stage > div.ui.app
+       the ground behind the UI is darker than its card (0.4% against 0.4% luminance; needs 3:1)  [1440-01-dark-ground.jpg]
+       fix: light the ground behind the UI (a daylight data-fx-palette): at least 3:1 against the card
+  WARN fade-cut        div.ui-win__main > ul.ui-win__rows > li.ui-win__row:nth-of-type(8) > span.ui-avatar  "MN"
+       4 lines of div.ui.ui-panel fade out under its edge ("MN", "minimist", "CVE-2021-44906 · 1.2.5"): drawn at a fraction of #5b909f on #2e4045, half-erased  [1440-02-fade-cut.jpg]
+       fix: fit the mock's rows inside its panel (fewer rows, a taller panel), or end the fade below the last whole row: no row half-erased
+  WARN fade-cut        div.ui-term__screen > div.ui-term__track > div.ui-term__ln.ui-term__log:nth-of-type(5) > span.ui-term__path  "auth/session.test.ts"
+       6 lines of div.ui.ui-panel fade out under its edge ("auth/session.test.ts", "31 tests", "958ms"): drawn at a fraction of #b4afaa on #0f0d0c, half-erased  [1440-03-fade-cut.jpg]
+       fix: fit the mock's rows inside its panel (fewer rows, a taller panel), or end the fade below the last whole row: no row half-erased
+  WARN fade-cut        div.ui.ui-notify > ul.ui-notify__list > li.ui-note:nth-of-type(1) > span.ui-btn.ui-btn--sm  "Review"
+       2 lines of div.ui.ui-notify fade out under its edge ("Review", "json5 merged 3h"): drawn at a fraction of #232121 on #e4dfd9, half-erased  [1440-04-fade-cut.jpg]
+       fix: fit the mock's rows inside its panel (fewer rows, a taller panel), or end the fade below the last whole row: no row half-erased
+  WARN hidden-content  div.ui.ui-panel > div.ui-diff__lines > div.ui-diff__ln:nth-of-type(5) > i:nth-of-type(2)  "17"
+       with reduced motion asked for, it stays hidden on the first screen (transparent letters) inside a drawn mock: reduced motion must show the finished page  [1440-rm-01-hidden-content.jpg]
+       fix: show the content at rest: the hidden state only under a class the script adds on its live path, never in the plain CSS (prefers-reduced-motion and a script that never runs show the finished page)
+  WARN hidden-content  div.ui.ui-panel > div.ui-diff__lines > div.ui-diff__ln:nth-of-type(5) > i:nth-of-type(2)  "17"
+       with no IntersectionObserver callback (a script that never gets that far) it stays hidden on the first screen, 4 s after load (transparent letters) inside a drawn mock: the page shows it only when a script reveals it  [1440-io-01-hidden-content.jpg]
+       fix: show the content at rest: the hidden state only under a class the script adds on its live path, never in the plain CSS (prefers-reduced-motion and a script that never runs show the finished page)
+  WARN hidden-content  figure.mo-pc__visual:nth-of-type(2) > div.ui.ui-panel > div.ui-code__tabs > span.ui-code__tab:nth-of-type(1)  "TSorders.ts"
+       with no IntersectionObserver callback (a script that never gets that far) 40 lines stay hidden on screen 2, 4 s after load (opacity 0) inside a drawn mock: "TS", "TSrouter.ts", "TS": the page shows it only when a script reveals it  [1440-io-02-hidden-content.jpg]
+       fix: show the content at rest: the hidden state only under a class the script adds on its live path, never in the plain CSS (prefers-reduced-motion and a script that never runs show the finished page)
+  WARN hidden-content  figure.mo-pc__visual:nth-of-type(1) > div.ui.ui-panel > div.ui-checks__head > div.ui-title  "Lockfile scan"
+       with no IntersectionObserver callback (a script that never gets that far) 6 lines stay hidden on screen 3, 4 s after load (opacity 0) inside a drawn mock: "3 of 4", "api / package-lock.j", "web / pnpm-lock.yaml": the page shows it only when a script reveals it  [1440-io-03-hidden-content.jpg]
+       fix: show the content at rest: the hidden state only under a class the script adds on its live path, never in the plain CSS (prefers-reduced-motion and a script that never runs show the finished page)
+  WARN hidden-content  div.ui-diff__sug > div.ui-diff__ln > span.ui-diff__code > span.s  ""path-to-regexp""
+       with scripts switched off (a blocked or failed script) 2 lines stay hidden on the first screen, 1.5 s after load (opacity 0) inside a drawn mock: ""0.1.10"": the page shows it only when a script reveals it  [1440-nojs-01-hidden-content.jpg]
+       fix: show the content at rest: the hidden state only under a class the script adds on its live path, never in the plain CSS (prefers-reduced-motion and a script that never runs show the finished page)
+  WARN section-air     section#faq  "Questions before you connect Does Wrenpa"
+       the content fills 48.9% of the section's height (441 of 900px): 55% or more (40% WARN) (SR-3)  [1440-rhythm-01-section-air.jpg]
+       fix: fill the section to 55%: more content, a picture or a background layer, or merge it into the section above as its last block
+  WARN container-edges div.wrap.mo-pc__grid > div.mo-pc__text > ol.mo-pc__steps > li.mo-pc__step:nth-of-type(1)  "Reads every lockfile Each new advisory f"
+       3 text blocks start on a left line at x 106, 26px from the container's left: text starts on the container's left, or on one split line (x 623, 732, 841) (also "Traces the call path Wrenpatch f", "Opens a tested pull request The ") (it is in a scroll scene: told as a WARN) (SR-6)  [1440-rhythm-02-container-edges.jpg]
+       fix: start the text on the container's left, or on the one split line every split shares
+  (probe error) CDP timeout: Page.captureScreenshot
+
+1024x768  9 screens  1 FAIL  14 WARN
+  FAIL section-gaps    section#features / section#faq
+       189px between these sections, -61% against the median 479px  [1024-11-section-gaps.jpg]
+       fix: use one gap between sections (all within 25% of each other)
+  WARN cut-text        div.ui-win__main > ul.ui-win__rows > li.ui-win__row:nth-of-type(1) > span.ui-win__sub  "CVE-2024-45296 · 0.1.7 to 0.1.10"
+       shortened with an ellipsis (and 5 more like it: "CVE-2024-37890 · 8.16.0 ", "CVE-2024-4068 · 3.0.2 to", "CVE-2022-25883 · 7.5.1 t", "CVE-2022-46175 · 2.2.1 t", ...)  [1024-01-cut-text.jpg]
+       fix: give the text room: no overflow clipping a line, no line past its box
+  WARN cut-text        div.ui.ui-panel > div.ui-diff__lines > div.ui-diff__ln:nth-of-type(14) > i:nth-of-type(1)  "24"
+       cut 6px at the bottom by the overflow of div.hero-text.hero__in > div.hero__stage > div.ui.app > div.app__pane.app__pane--open: a fragment run out through its panel's edge (and 2 more like it: "24", "},")  [1024-02-cut-text.jpg]
+       fix: give the text room: no overflow clipping a line, no line past its box
+  WARN cut-text        figure.mo-pc__visual:nth-of-type(3) > div.ui.ui-panel > div.ui-term__head > span.ui-term__title  "acme/api"
+       shortened with an ellipsis (caught mid-way through a scroll-linked animation)  [1024-08-cut-text.jpg]
+       fix: give the text room: no overflow clipping a line, no line past its box
+  WARN scroll-linked   section#flow > div.wrap.mo-pc__grid > div.mo-pc__visuals.frame > figure.mo-pc__visual:nth-of-type(1)  "Lockfile scan 3 of 4 api / package-lock."
+       fades with the scroll and changes back when the scroll goes back (opacity), eased after the scroll stops; 5 more parts of this section change with the scroll too (figure.mo-pc__visual:nth-of-type(2), figure.mo-pc__visual:nth-of-type(3), h3, h3, ...) (inside a dealt moment's section, [data-moment]: expected on every kind, two moments at most, house rule; its still is judged under reduced motion)  [1024-09-scroll-linked.jpg]
+       fix: remove the scroll-driven motion; motion lives inside a visual as a small loop
+  WARN text-only       section#faq  "Questions before you connect"
+       the section is only text: no picture, icon, mock or effect in it  [1024-12-text-only.jpg]
+       fix: give the section a visual: a photograph that fits, the real icons, or a UI fragment on a ground
+  WARN cta             section#flow  "From advisory to merged patch"
+       a section over 1.5 screens long with no link or button in it  [1024-10-cta.jpg]
+       fix: add the action: a button in the hero, one on every priced item, one in the closing section
+  WARN text-contrast   div.ui-win__main > ul.ui-win__rows > li.ui-win__row:nth-of-type(1) > span.ui-avatar  "PR"
+       20 lines of text in drawn mocks read under 4.5:1 (9 colour pairs), the worst "PR" in #a97a68 on #4b3831 at 2.97:1  [1024-03-text-contrast.jpg]
+       fix: lift the mocks' muted text (labels, meta, initials) to 4.5:1 on their own panel, or set it larger
+  WARN section-gaps    main#top > section.hero.hero--product / section#flow
+       692px between these sections, +45% against the median 479px  [1024-06-section-gaps.jpg]
+       fix: use one gap between sections (all within 25% of each other)
+  WARN section-gaps    section#flow / section#features
+       679px between these sections, +42% against the median 479px  [1024-14-section-gaps.jpg]
+       fix: use one gap between sections (all within 25% of each other)
+  WARN section-gaps    section#faq / section#integrations
+       278px between these sections, -42% against the median 479px  [1024-13-section-gaps.jpg]
+       fix: use one gap between sections (all within 25% of each other)
+  WARN fade-cut        div.ui-win__main > ul.ui-win__rows > li.ui-win__row:nth-of-type(6) > span.ui-avatar  "TC"
+       3 lines of div.ui.ui-panel fade out under its edge ("TC", "tough-cookie", "Merged"): drawn at a fraction of #6d9271 on #344034, half-erased  [1024-04-fade-cut.jpg]
+       fix: fit the mock's rows inside its panel (fewer rows, a taller panel), or end the fade below the last whole row: no row half-erased
+  WARN fade-cut        div.ui-diff__lines > div.ui-diff__ln:nth-of-type(12) > span.ui-diff__code > span.s:nth-of-type(2)  ""ws""
+       3 lines of div.ui.ui-panel fade out under its edge (""ws"", ""zod"", ""3.23.8""): drawn at a fraction of #9a938c on #0f0d0c, half-erased  [1024-05-fade-cut.jpg]
+       fix: fit the mock's rows inside its panel (fewer rows, a taller panel), or end the fade below the last whole row: no row half-erased
+  WARN nav-current     header.nav.nav--centre
+       the nav stays on screen with 4 links to the page's sections, but never marks the one you are in (no link changes as the page scrolls)  [1024-07-nav-current.jpg]
+       fix: mark the link of the section on screen (a colour, a weight or a line under it) as the visitor scrolls
+  WARN action-repeat   header.nav.nav--centre > div.wrap.nav__bar > div.nav__actions > a.btn.btn--primary  "start free"
+       "start free" shows 2 times on the first screen at 1024px (nav, hero): the nav's button and the hero's; nothing else on the screen may repeat it  [1024-15-action-repeat.jpg]
+       fix: show the action once a screen besides the nav's button: the hero's, the close's or the phone bar's, never all at once
+
+820x1180  9 screens  3 FAIL  12 WARN
+  FAIL section-gaps    main#top > section.hero.hero--product / section#flow
+       181px between these sections, -70% against the median 595px  [820-03-section-gaps.jpg]
+       fix: use one gap between sections (all within 25% of each other)
+  FAIL section-gaps    section#flow / section#features
+       1323px between these sections (never on one screen), +122% against the median 595px
+       fix: use one gap between sections (all within 25% of each other)
+  WARN text-only       section#faq  "Questions before you connect"
+       the section is only text: no picture, icon, mock or effect in it  [820-05-text-only.jpg]
+       fix: give the section a visual: a photograph that fits, the real icons, or a UI fragment on a ground
+  WARN cta             section#flow  "From advisory to merged patch"
+       a section over 1.5 screens long with no link or button in it  [820-04-cta.jpg]
+       fix: add the action: a button in the hero, one on every priced item, one in the closing section
+  WARN text-contrast   div.ui-win__main > ul.ui-win__rows > li.ui-win__row:nth-of-type(1) > span.ui-avatar  "PR"
+       31 lines of text in drawn mocks read under 4.5:1 (12 colour pairs), the worst "PR" in #a97a68 on #4b3831 at 2.97:1  [820-01-text-contrast.jpg]
+       fix: lift the mocks' muted text (labels, meta, initials) to 4.5:1 on their own panel, or set it larger
+  WARN section-gaps    section#integrations / footer#contact
+       uneven space at the edge of a band: 465px outside its edge, 117px inside it (the space on either side of a change of ground reads as one gap only when the two match)  [820-07-section-gaps.jpg]
+       fix: use one gap between sections (all within 25% of each other)
+  WARN fade-cut        div.ui-diff__lines > div.ui-diff__ln:nth-of-type(16) > span.ui-diff__code > span.s:nth-of-type(2)  ""typescript""
+       4 lines of div.ui.ui-panel fade out under its edge (""typescript"", ""5.4.5"", ""vitest""): drawn at a fraction of #9a938c on #0f0d0c, half-erased  [820-02-fade-cut.jpg]
+       fix: fit the mock's rows inside its panel (fewer rows, a taller panel), or end the fade below the last whole row: no row half-erased
+  WARN empty-area      section#faq  "Questions before you connect"
+       42% of the section is empty: 16px of empty rows between its content, 400px under its last (div.faq__item:nth-of-type(4)), in its 988px of rows (WARN over 35%, FAIL over 50%)  [820-06-empty-area.jpg]
+       fix: fill the section: a picture or a second column beside the words, or more of its own content; the section stays one or two screens tall (T-height)
+  WARN empty-area      section#integrations  "Works with your code host and chat"
+       37% of the section is empty: 368px under its last (div.panel), in its 988px of rows (WARN over 35%, FAIL over 50%)  [820-08-empty-area.jpg]
+       fix: fill the section: a picture or a second column beside the words, or more of its own content; the section stays one or two screens tall (T-height)
+  WARN empty-area      footer#contact  "Patch your first repository today"
+       46% of the section is empty: 368px of empty rows between its content, 9% beside content that covers under half the container, in its 988px of rows (WARN over 35%, FAIL over 50%)  [820-09-empty-area.jpg]
+       fix: fill the section: a picture or a second column beside the words, or more of its own content; the section stays one or two screens tall (T-height)
+  FAIL section-air     section#faq / section#integrations
+       646px of air between the content of these two sections: 128-480px (64-600px WARN) (every gap out of the band at 820px, top to bottom: 548px after "Patches on your term", 646px after "Questions before you") (SR-3)  [820-rhythm-01-section-air.jpg]
+       fix: keep 128-480px of air between the content of neighbouring sections (112-420px on a phone): the sections' padding (--padt, --padb)
+  WARN section-air     section#features / section#faq
+       548px of air between the content of these two sections: 128-480px (64-600px WARN) (SR-3)  [820-rhythm-02-section-air.jpg]
+       fix: keep 128-480px of air between the content of neighbouring sections (112-420px on a phone): the sections' padding (--padt, --padb)
+  WARN section-air     section#faq  "Questions before you connect Does Wrenpa"
+       the content fills 45.2% of the section's height (534 of 1180px): 55% or more (40% WARN) (SR-3)  [820-rhythm-03-section-air.jpg]
+       fix: fill the section to 55%: more content, a picture or a background layer, or merge it into the section above as its last block
+  WARN section-air     section#integrations  "Works with your code host and chat Conne"
+       the content fills 50.6% of the section's height (598 of 1180px): 55% or more (40% WARN) (SR-3)  [820-rhythm-04-section-air.jpg]
+       fix: fill the section to 55%: more content, a picture or a background layer, or merge it into the section above as its last block
+  WARN section-air     section#features  "Patches on your terms. You decide what m"
+       the content fills 53.9% of the section's height (636 of 1180px): 55% or more (40% WARN) (SR-3)  [820-rhythm-05-section-air.jpg]
+       fix: fill the section to 55%: more content, a picture or a background layer, or merge it into the section above as its last block
+
+768x1024  9 screens  3 FAIL  11 WARN
+  FAIL cut-text        div.ui.ui-panel > pre.ui-code__pre > code > span.ui-code__ln:nth-of-type(4)  "const re = pathToRegexp(route);"
+       cut 14px at the right by the overflow of ol.mo-pc__steps > li.mo-pc__step:nth-of-type(2) > figure.mo-pc__visual > div.ui.ui-panel  [768-04-cut-text.jpg]
+       fix: give the text room: no overflow clipping a line, no line past its box
+  FAIL ui-fit          div.panel.panel--flush > div.stage.stage--fade-b > div.at-rise.fit > div.ui.ui-notify  "#team-orders: patch ready path-to-regexp"
+       its "Review" runs 9px past the fragment's own edge: the fragment is narrower than its content  [768-07-ui-fit.jpg]
+       fix: give the fragment the width it needs (its meta.json size), or use a smaller fragment
+  FAIL section-gaps    section#flow / section#features
+       1012px between these sections, +130% against the median 441px  [768-12-section-gaps.jpg]
+       fix: use one gap between sections (all within 25% of each other)
+  WARN cut-text        div.ui.ui-panel > div.ui-diff__lines > div.ui-diff__ln:nth-of-type(10) > i:nth-of-type(1)  "20"
+       cut 10px at the bottom by the overflow of div.hero-text.hero__in > div.hero__stage > div.ui.app > div.app__pane.app__pane--open: a fragment run out through its panel's edge (and 4 more like it: "20", ""semver": "7.5.1",", ""semver"", ""7.5.1"")  [768-01-cut-text.jpg]
+       fix: give the text room: no overflow clipping a line, no line past its box
+  WARN cut-text        ul.ui-notify__list > li.ui-note:nth-of-type(1) > span.ui-note__text > span.ui-note__body  "path-to-regexp 0.1.10, tests passed"
+       shortened with an ellipsis  [768-08-cut-text.jpg]
+       fix: give the text room: no overflow clipping a line, no line past its box
+  WARN cut-text        ul.ui-toggles__list > li.ui-tg:nth-of-type(4) > span.ui-tg__text > span.ui-tg__sub  "One pull request at 09:00"
+       cut 5px at the bottom by the overflow of section#features > div.wrap > div.grid > article.card.card--row:nth-of-type(2): a fragment run out through its panel's edge  [768-09-cut-text.jpg]
+       fix: give the text room: no overflow clipping a line, no line past its box
+  WARN text-only       section#faq  "Questions before you connect"
+       the section is only text: no picture, icon, mock or effect in it  [768-10-text-only.jpg]
+       fix: give the section a visual: a photograph that fits, the real icons, or a UI fragment on a ground
+  WARN cta             section#flow  "From advisory to merged patch"
+       a section over 1.5 screens long with no link or button in it  [768-06-cta.jpg]
+       fix: add the action: a button in the hero, one on every priced item, one in the closing section
+  WARN text-contrast   div.ui-win__main > ul.ui-win__rows > li.ui-win__row:nth-of-type(1) > span.ui-avatar  "PR"
+       29 lines of text in drawn mocks read under 4.5:1 (12 colour pairs), the worst "PR" in #a97a68 on #4b3831 at 2.97:1  [768-02-text-contrast.jpg]
+       fix: lift the mocks' muted text (labels, meta, initials) to 4.5:1 on their own panel, or set it larger
+  WARN section-gaps    main#top > section.hero.hero--product / section#flow
+       181px between these sections, -59% against the median 441px  [768-05-section-gaps.jpg]
+       fix: use one gap between sections (all within 25% of each other)
+  WARN fade-cut        div.ui-diff__lines > div.ui-diff__ln:nth-of-type(8) > span.ui-diff__code > span.s:nth-of-type(2)  ""pg""
+       4 lines of div.ui.ui-panel fade out under its edge (""pg"", ""8.11.3"", ""pino""): drawn at a fraction of #9a938c on #0f0d0c, half-erased  [768-03-fade-cut.jpg]
+       fix: fit the mock's rows inside its panel (fewer rows, a taller panel), or end the fade below the last whole row: no row half-erased
+  WARN empty-area      footer#contact  "Patch your first repository today"
+       36% of the section is empty: 208px of empty rows between its content, 11% beside content that covers under half the container, in its 832px of rows (WARN over 35%, FAIL over 50%)  [768-11-empty-area.jpg]
+       fix: fill the section: a picture or a second column beside the words, or more of its own content; the section stays one or two screens tall (T-height)
+  WARN section-air     section#faq / section#integrations
+       491px of air between the content of these two sections: 128-480px (64-600px WARN) (SR-3)  [768-rhythm-01-section-air.jpg]
+       fix: keep 128-480px of air between the content of neighbouring sections (112-420px on a phone): the sections' padding (--padt, --padb)
+  WARN section-air     section#faq  "Questions before you connect Does Wrenpa"
+       the content fills 52% of the section's height (533 of 1024px): 55% or more (40% WARN) (SR-3)  [768-rhythm-02-section-air.jpg]
+       fix: fill the section to 55%: more content, a picture or a background layer, or merge it into the section above as its last block
+
+390x844  11 screens  5 FAIL  9 WARN
+  FAIL cut-text        div.ui.ui-panel > pre.ui-code__pre > code > span.ui-code__ln:nth-of-type(4)  "const re = pathToRegexp(route);"
+       cut 22px at the right by the overflow of ol.mo-pc__steps > li.mo-pc__step:nth-of-type(2) > figure.mo-pc__visual > div.ui.ui-panel  [390-05-cut-text.jpg]
+       fix: give the text room: no overflow clipping a line, no line past its box
+  FAIL section-gaps    main#top > section.hero.hero--product / section#flow
+       117px between these sections, -62% against the median 310px  [390-04-section-gaps.jpg]
+       fix: use one gap between sections (all within 25% of each other)
+  FAIL section-gaps    section#features / section#faq
+       704px between these sections, +127% against the median 310px  [390-09-section-gaps.jpg]
+       fix: use one gap between sections (all within 25% of each other)
+  WARN cut-text        div.ui.ui-panel > div.ui-diff__lines > div.ui-diff__ln:nth-of-type(15) > i:nth-of-type(2)  "25"
+       cut 5px at the bottom by the overflow of div.hero-text.hero__in > div.hero__stage > div.ui.app > div.app__pane.app__pane--open: a fragment run out through its panel's edge (and 2 more like it: ""devDependencies": {", ""devDependencies"")  [390-01-cut-text.jpg]
+       fix: give the text room: no overflow clipping a line, no line past its box
+  WARN cut-text        ul.ui-notify__list > li.ui-note:nth-of-type(3) > span.ui-note__text > span.ui-note__title  "json5 merged 3h"
+       cut 10px at the bottom by the overflow of section#features > div.wrap > div.grid > article.card.card--row:nth-of-type(1): a fragment run out through its panel's edge (and 1 more like it: "3h")  [390-07-cut-text.jpg]
+       fix: give the text room: no overflow clipping a line, no line past its box
+  WARN text-only       section#faq  "Questions before you connect"
+       the section is only text: no picture, icon, mock or effect in it  [390-10-text-only.jpg]
+       fix: give the section a visual: a photograph that fits, the real icons, or a UI fragment on a ground
+  WARN cta             section#flow  "From advisory to merged patch"
+       a section over 1.5 screens long with no link or button in it  [390-06-cta.jpg]
+       fix: add the action: a button in the hero, one on every priced item, one in the closing section
+  WARN cta             section#features  "Patches on your terms. You decide what m"
+       a section over 1.5 screens long with no link or button in it  [390-08-cta.jpg]
+       fix: add the action: a button in the hero, one on every priced item, one in the closing section
+  WARN text-contrast   div.ui-diff__lines > div.ui-diff__thread > div.ui-diff__by > span.ui-avatar  "W"
+       4 lines of text in drawn mocks read under 4.5:1 (4 colour pairs), the worst "W" in #5b909f on #2e4045 at 3.07:1  [390-02-text-contrast.jpg]
+       fix: lift the mocks' muted text (labels, meta, initials) to 4.5:1 on their own panel, or set it larger
+  WARN fade-cut        div.ui-diff__lines > div.ui-diff__ln:nth-of-type(13) > span.ui-diff__code > span.s:nth-of-type(2)  ""zod""
+       2 lines of div.ui.ui-panel fade out under its edge (""zod"", ""3.23.8""): drawn at a fraction of #9a938c on #0f0d0c, half-erased  [390-03-fade-cut.jpg]
+       fix: fit the mock's rows inside its panel (fewer rows, a taller panel), or end the fade below the last whole row: no row half-erased
+  WARN empty-area      footer#contact  "Patch your first repository today"
+       40% of the section is empty: 576px of empty rows between its content, 3% beside content that covers under half the container, in its 1544px of rows (WARN over 35%, FAIL over 50%)  [390-11-empty-area.jpg]
+       fix: fill the section: a picture or a second column beside the words, or more of its own content; the section stays one or two screens tall (T-height)
+  FAIL section-air     section#features / section#faq
+       728px of air between the content of these two sections: 112-420px (56-560px WARN) (SR-3)  [390-rhythm-01-section-air.jpg]
+       fix: keep 128-480px of air between the content of neighbouring sections (112-420px on a phone): the sections' padding (--padt, --padb)
+  FAIL section-air     section#integrations  "Works with your code host and chat Conne"
+       the content fills 22.6% of the section's height (191 of 844px): 55% or more (40% WARN) (SR-3)  [390-rhythm-02-section-air.jpg]
+       fix: fill the section to 55%: more content, a picture or a background layer, or merge it into the section above as its last block
+  WARN container-edges div.wrap.mo-pc__grid > div.mo-pc__text > ol.mo-pc__steps > li.mo-pc__step:nth-of-type(1)  "Reads every lockfile Each new advisory f"
+       12 text blocks start on a left line at x 50, 26px from the container's left: text starts on the container's left, or on one split line (x 177, 207, 238) (also "Reads every lockfile", "Each new advisory from the GitHu", "Each new advisory from the GitHu") (it is in a scroll scene: told as a WARN) (SR-6)  [390-rhythm-03-container-edges.jpg]
+       fix: start the text on the container's left, or on the one split line every split shares
+
+first screen at 1280, 1152, 896  0 FAIL  0 WARN
+
+the page at 320x640, walked for what runs past the screen's edge  0 FAIL
+
+checks
+  PASS assets                 PASS shader-lint            PASS gl-fallback            
+  PASS empty-visual           PASS hero-fill              PASS flush                  
+  PASS placeholder            PASS sample-label           PASS caption                
+  PASS credit-wall            PASS nav                    PASS nav-covers             
+  PASS spill                  PASS off-viewport           PASS fold-card              
+  PASS hover-spill            PASS overlap-text           PASS collide                
+  PASS tap-size               PASS row-gap                FAIL cut-text               
+  PASS fold-cut               PASS marquee                WARN scroll-linked          
+  PASS scroll-reveal          PASS pinned                 PASS loop-pause             
+  PASS reduced-motion         WARN hidden-content         PASS webgl                  
+  PASS no-visual              WARN text-only              PASS card-visual            
+  PASS hidden-visual          PASS card-family            PASS card-layout            
+  PASS nesting                PASS effect-repeat          FAIL ui-fit                 
+  PASS ui-centre              FAIL dark-ground            PASS button-styles          
+  PASS button-shape           PASS same-action            PASS button-picture         
+  WARN cta                    PASS pricing-tiers          PASS copy-headline          
+  PASS copy-fact              PASS copy-headings          PASS copy-buttons           
+  PASS copy-actions           PASS heading-scale          PASS stagger                
+  PASS top-stagger            PASS off-grid               PASS col-edge               
+  PASS right-edge             PASS centre-axis            PASS tilt                   
+  PASS contrast               WARN text-contrast          PASS body-size              
+  PASS busy-ground            FAIL section-gaps           PASS proximity              
+  PASS hole                   PASS links                  PASS forms                  
+  PASS photo-upscale          PASS photo-set              PASS photo-credit           
+  PASS nav-family             PASS nav-labels             PASS link-styles            
+  PASS heading-align          PASS label-centre           PASS fake-button            
+  PASS stranded-action        PASS orphan                 PASS unit-break             
+  PASS tab-wrap               PASS effects-fit            WARN fade-cut               
+  PASS photo-weight           PASS copy-length            WARN nav-current            
+  PASS progress-bar           PASS photo-repeat           PASS button-contrast        
+  PASS photo-print            PASS grounds                PASS split-align            
+  PASS fact-agree             PASS fold-action            PASS action-count           
+  PASS one-screen             PASS hover                  PASS hover-move             
+  PASS product-shown          PASS same-object            PASS font-load              
+  PASS visual-caption         PASS visual-empty           PASS effect-kind            
+  PASS hero-enter             PASS moment-none            PASS street-number          
+  PASS postcode               PASS coordinates            PASS company-number         
+  PASS phone-number           PASS hero-screen            PASS section-height         
+  FAIL section-air            PASS one-section            PASS one-heading            
+  WARN container-edges        PASS row-lines              PASS split-pair             
+  PASS motion-layer           PASS count-text             PASS loop-cycle             
+  PASS section-tile           WARN empty-area             PASS a11y-name              
+  PASS img-alt                PASS field-label            PASS heading-order          
+  PASS tabindex               PASS focus-ring             PASS focus-visible          
+  PASS focus-hidden           PASS skip-link              PASS menu-toggle            
+  PASS lang                   PASS page-meta              PASS share-meta             
+  WARN action-repeat          PASS map-link               PASS open-now               
+  PASS assumed                PASS run-on                 PASS form-fields            
+  PASS form-send              
+
+total  13 FAIL  56 WARN  (crops and report.json in C:\Projects\Example\.taste-skill\consistency)

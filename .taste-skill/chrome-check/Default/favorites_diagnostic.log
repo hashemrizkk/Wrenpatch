@@ -1,0 +1,72 @@
+2026-11-19 16:14:45.676: [INFO] CurrentProfilePath: C:\Projects\Example\.taste-skill\chrome-check\Default
+2026-11-19 16:14:45.676: [INFO] Profiles total count: 1
+2026-11-19 16:14:45.676: [INFO] Profile: name=Profile 1 path=C:\Projects\Example\.taste-skill\chrome-check\Default lastActive=null
+2026-11-19 16:14:45.676: [INFO] LastUsedProfileDir: C:\Projects\Example\.taste-skill\chrome-check\Default
+2026-11-19 16:14:45.676: [INFO] VisibilityChanged: 0
+2026-11-19 16:14:45.698: [INFO] BookmarkNodeAdded, ABU: 0
+2026-11-19 16:14:45.699: [INFO] BookmarkNodeAdded, ABU: 0
+2026-11-19 16:14:45.699: [INFO] BookmarkNodeAdded, ABU: 0
+2026-11-19 16:14:45.699: [INFO] OnDoneLoading sync enabled: 0
+2026-11-19 16:14:45.699: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-11-19 16:14:45.699: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-11-19 16:14:45.699: [INFO] BookmarksSnapshot Startup total=3 bar=3 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-11-19 16:14:45.737: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2026-11-19 16:14:48.060: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2026-11-19 16:14:48.063: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 3
+2026-11-19 16:14:48.065: [INFO] Primary account changed.
+2026-11-19 16:14:48.065: [INFO] OnPrimaryAccountChanged PrimaryAccountChangeEvent::Type::kSet
+2026-11-19 16:14:48.072: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 3
+2026-11-19 16:14:54.809: [INFO] BookmarkNodeAdded, ABU: 0
+2026-11-19 16:14:54.810: [INFO] BookmarkNodeAdded, ABU: 0
+2026-11-19 16:14:54.810: [INFO] BookmarkNodeAdded, ABU: 0
+2026-11-19 16:14:54.810: [INFO] BookmarkNodeAdded, ABU: 0
+2026-11-19 16:14:54.810: [INFO] BookmarkNodeAdded, ABU: 0
+2026-11-19 16:14:54.810: [INFO] BookmarkNodeAdded, ABU: 0
+2026-11-19 16:14:54.811: [INFO] BookmarkNodeAdded, ABU: 0
+2026-11-19 16:14:54.811: [INFO] BookmarkNodeAdded, ABU: 0
+2026-11-19 16:14:54.811: [INFO] BookmarkNodeAdded, ABU: 0
+2026-11-19 16:14:54.811: [INFO] BookmarkNodeAdded, ABU: 0
+2026-11-19 16:14:54.811: [INFO] BookmarkNodeAdded, ABU: 0
+2026-11-19 16:14:54.811: [INFO] BookmarkNodeAdded, ABU: 0
+2026-11-19 16:14:54.812: [INFO] BookmarkNodeAdded, ABU: 0
+2026-11-19 16:14:54.812: [INFO] BookmarkNodeAdded, ABU: 0
+2026-11-19 16:14:54.812: [INFO] BookmarkNodeAdded, ABU: 0
+2026-11-19 16:14:54.826: [INFO] BookmarkBarPrefChanged showBar=0 showBarNTP=1
+2026-11-19 16:14:55.396: [INFO] Sync initialization duration: 7258ms
+2026-11-19 16:15:16.030: [INFO] BookmarksSnapshot Shutdown total=18 bar=18 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-11-19 16:33:20.717: [INFO] CurrentProfilePath: C:\Projects\Example\.taste-skill\chrome-check\Default
+2026-11-19 16:33:20.717: [INFO] Profiles total count: 1
+2026-11-19 16:33:20.717: [INFO] Profile: name=Personal path=C:\Projects\Example\.taste-skill\chrome-check\Default lastActive=2026-11-19T16:14:45.686Z
+2026-11-19 16:33:20.717: [INFO] LastUsedProfileDir: C:\Projects\Example\.taste-skill\chrome-check\Default
+2026-11-19 16:33:20.717: [INFO] MostRecentlyActiveProfile: name=Personal path=C:\Projects\Example\.taste-skill\chrome-check\Default lastActive=2026-11-19T16:14:45.686Z
+2026-11-19 16:33:20.717: [INFO] VisibilityChanged: 0
+2026-11-19 16:33:20.762: [INFO] OnDoneLoading sync enabled: 1
+2026-11-19 16:33:20.762: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-11-19 16:33:20.762: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-11-19 16:33:20.762: [INFO] BookmarksSnapshot Startup total=18 bar=18 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-11-19 16:33:20.843: [INFO] Sync initialization duration: 78ms
+2026-11-19 16:33:45.983: [INFO] BookmarksSnapshot Shutdown total=18 bar=18 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-11-19 16:33:49.238: [INFO] CurrentProfilePath: C:\Projects\Example\.taste-skill\chrome-check\Default
+2026-11-19 16:33:49.238: [INFO] Profiles total count: 1
+2026-11-19 16:33:49.238: [INFO] Profile: name=Personal path=C:\Projects\Example\.taste-skill\chrome-check\Default lastActive=2026-11-19T16:33:20.731Z
+2026-11-19 16:33:49.238: [INFO] LastUsedProfileDir: C:\Projects\Example\.taste-skill\chrome-check\Default
+2026-11-19 16:33:49.238: [INFO] MostRecentlyActiveProfile: name=Personal path=C:\Projects\Example\.taste-skill\chrome-check\Default lastActive=2026-11-19T16:33:20.731Z
+2026-11-19 16:33:49.238: [INFO] VisibilityChanged: 0
+2026-11-19 16:33:49.276: [INFO] OnDoneLoading sync enabled: 1
+2026-11-19 16:33:49.276: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-11-19 16:33:49.276: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-11-19 16:33:49.276: [INFO] BookmarksSnapshot Startup total=18 bar=18 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-11-19 16:33:49.363: [INFO] Sync initialization duration: 83ms
+2026-11-19 16:33:54.804: [INFO] BookmarksSnapshot Shutdown total=18 bar=18 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-11-19 16:40:34.851: [INFO] CurrentProfilePath: C:\Projects\Example\.taste-skill\chrome-check\Default
+2026-11-19 16:40:34.851: [INFO] Profiles total count: 1
+2026-11-19 16:40:34.851: [INFO] Profile: name=Personal path=C:\Projects\Example\.taste-skill\chrome-check\Default lastActive=2026-11-19T16:33:49.250Z
+2026-11-19 16:40:34.851: [INFO] LastUsedProfileDir: C:\Projects\Example\.taste-skill\chrome-check\Default
+2026-11-19 16:40:34.851: [INFO] MostRecentlyActiveProfile: name=Personal path=C:\Projects\Example\.taste-skill\chrome-check\Default lastActive=2026-11-19T16:33:49.250Z
+2026-11-19 16:40:34.852: [INFO] VisibilityChanged: 0
+2026-11-19 16:40:34.885: [INFO] OnDoneLoading sync enabled: 1
+2026-11-19 16:40:34.885: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-11-19 16:40:34.885: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-11-19 16:40:34.885: [INFO] BookmarksSnapshot Startup total=18 bar=18 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-11-19 16:40:34.978: [INFO] Sync initialization duration: 89ms
+2026-11-19 16:41:05.830: [INFO] BookmarksSnapshot Shutdown total=18 bar=18 other=0 mobile=0 showBar=0 showBarNTP=1
