@@ -2,7 +2,7 @@
 
 A one-page landing site for **Wrenpatch**, a fictional developer tool that tracks security advisories (CVEs) in a team's dependencies, checks whether the vulnerable code is actually called, and opens the fix as a tested pull request.
 
-The visual style follows [duckurity.com](https://duckurity.com/): a warm near-black background, off-white text, Funnel Display headlines, mono type for code, square buttons and thin dividing lines. Every place the reference uses orange (buttons, links, focus outlines) is white here. The copy, code and product are original.
+The design is dark and minimal: a warm near-black background, off-white text, headlines in the Sreda display face, mono type for code, square buttons, thin dividing lines, and white for every button, link and focus outline.
 
 ![Hero of the Wrenpatch landing page](share.jpg)
 
@@ -34,6 +34,7 @@ npm start
 | `package.json` | The `npm start` script and its one dev dependency |
 | `privacy.html`, `terms.html` | Short placeholder legal pages |
 | `assets/` | Design system: styles, scripts, UI fragments, motion, diagrams and icons |
+| `assets/fonts/Sreda.otf` | The headline font |
 | `favicon.svg` | Site icon |
 | `share.jpg` | Preview image for shared links |
 | `names.json` | Record of the search that checked the name "Wrenpatch" was free |
@@ -45,12 +46,13 @@ npm start
 - `privacy.html` and `terms.html` are stand-ins.
 - Add the canonical link in `<head>` once the domain is known.
 - There is no pricing section yet.
+- Confirm the Sreda font license (see Fonts and icons).
 
 The CVE numbers and fixed versions in the app mock-up are real, public advisories.
 
 ## Fonts and icons
 
-Fonts load from Google Fonts: Funnel Display, Funnel Sans and DM Mono. Product logos come from SVG Logos and Simple Icons; product names and logos are trademarks of their owners.
+Headlines use **Sreda** by Glenjan (Elena Kowalski), served from `assets/fonts/Sreda.otf`. Its file says "Copyright (c) 2011-2012 by Glenjan. All rights reserved." and download sites disagree on whether commercial use is free, so confirm the license with Glenjan before going live. Body text (Instrument Sans) and code (JetBrains Mono) load from Google Fonts. Product logos come from SVG Logos and Simple Icons; product names and logos are trademarks of their owners.
 
 ## License
 

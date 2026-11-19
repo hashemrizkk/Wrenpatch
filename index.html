@@ -17,7 +17,8 @@
 <meta name="page-type" content="software">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@400..700&family=Funnel+Sans:wght@400..600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preload" href="assets/fonts/Sreda.otf" as="font" type="font/otf" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wdth,wght@75..100,400..600&family=JetBrains+Mono:wght@400..500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/system.css">
 <link rel="stylesheet" href="assets/ui/cards.css">
 <link rel="stylesheet" href="assets/motion/motion.css">
@@ -25,18 +26,19 @@
 <link rel="stylesheet" href="assets/layout/layout.css">
 <link rel="stylesheet" href="assets/icons/icon.css">
 <style>
+@font-face { font-family: "Sreda"; src: url("assets/fonts/Sreda.otf") format("opentype"); font-weight: 400; font-style: normal; font-display: swap; }
 :root {
   --p-bg: #0f0d0c; --p-surface: #181513; --p-ink: #e4dfd9; --p-muted: #9a938c;
   --p-accent: #ffffff; --p-accent-ink: #0f0d0c; --p-action: #ffffff; --p-action-ink: #0f0d0c;
   --p-inv-bg: #e4dfd9; --p-inv-surface: #d3cec8; --p-inv-ink: #0f0d0c; --p-inv-muted: #565350;
   --p-inv-accent: #0f0d0c; --p-inv-accent-ink: #e4dfd9; --p-inv-action: #0f0d0c; --p-inv-action-ink: #e4dfd9;
-  --font-display: "Funnel Display", system-ui, sans-serif;
-  --font-text: "Funnel Sans", system-ui, sans-serif;
-  --font-mono: "DM Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --font-display: "Sreda", Georgia, serif;
+  --font-text: "Instrument Sans", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
   --display-weight: 400;
-  --display-tracking: -0.03em;
-  --display-tracking-xl: -0.04em;
-  --ly-scale: 0.98;
+  --display-tracking: -0.01em;
+  --display-tracking-xl: -0.015em;
+  --ly-scale: 0.92;
 }
 </style>
 <link rel="stylesheet" href="assets/ui/base.css">
@@ -107,10 +109,10 @@
 </head>
 <body>
 <!-- type: software
-     deal: hero product (printed in place of the dealt triptych: the brief asks for the reference's layout, a head row over the product window),
+     deal: hero product (a head row over the product window),
      nav nav-centre (nav-cards re-dealt: one product, no picture cards), close close-type, footer footer-statement, rhythm space,
-     buttons solid, mark stack, palette: the client's own (warm near-black ground, bone ink, white accent in place of the reference's orange),
-     type funnel, grounds none (flat, as the reference), effect none
+     buttons solid, mark stack, palette: the client's own (warm near-black ground, bone ink, white accent),
+     type Sreda (local file) with Instrument Sans, grounds none (flat), effect none
      moments: pinned-chapters in #flow -->
 
 <header class="nav nav--centre">
@@ -341,12 +343,11 @@
 
   <section class="section" id="faq" aria-labelledby="faq-h">
     <div class="wrap grid grid--top">
-      <div class="span-5"><div class="section-head"><h2 id="faq-h">Questions before you connect</h2></div></div>
+      <div class="span-5"><div class="section-head"><h2 id="faq-h">Common questions</h2></div></div>
       <div class="faq span-6 start-7">
         <div class="faq__item"><h3>Does Wrenpatch merge without asking?</h3><p>Only when you turn on merging for patch versions. Minor and major bumps always wait for a person.</p></div>
-        <div class="faq__item"><h3>How does Wrenpatch decide an advisory is reachable?</h3><p>It follows imports from your entry points to the function the advisory names. With no path there, the advisory is listed as unreachable.</p></div>
+        <div class="faq__item"><h3>How does Wrenpatch decide an advisory is reachable?</h3><p>It follows imports from your entry points to the function the advisory names.</p></div>
         <div class="faq__item"><h3>What access does Wrenpatch need?</h3><p>Read access to manifests and lockfiles, and write access to open branches. It never reads secrets.</p></div>
-        <div class="faq__item"><h3>Which advisory sources does Wrenpatch use?</h3><p>The GitHub Advisory Database and OSV, checked as they publish.</p></div>
         <div class="faq__item"><h3>What does Wrenpatch not cover?</h3><p>Container images and OS packages. Keep your image scanner for those.</p></div>
       </div>
     </div>
